@@ -12,9 +12,9 @@ class PostgresWriter(object):
     """Base class for :py:class:`mysql2pgsql.lib.postgres_file_writer.PostgresFileWriter`
     and :py:class:`mysql2pgsql.lib.postgres_db_writer.PostgresDbWriter`.
     """
-    def __init__(self, tz=False, index_prefix=None):
+    def __init__(self, tz=False, index_prefix=''):
         self.column_types = {}
-        self.index_prefix = index_prefix or ''
+        self.index_prefix = index_prefix
         if tz:
             self.tz = timezone('UTC')
             self.tz_offset = '+00:00'
